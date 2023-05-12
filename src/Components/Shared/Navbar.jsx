@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.svg";
+import { HashLink } from "react-router-hash-link";
 
 const Navbar = () => {
   const option = (
@@ -8,7 +9,7 @@ const Navbar = () => {
         <NavLink
           style={({ isActive }) => ({
             color: isActive ? "#FF3811" : "#444444",
-            backgroundColor: 'white'
+            backgroundColor: "white",
           })}
           to="/"
         >
@@ -17,21 +18,19 @@ const Navbar = () => {
       </li>
 
       <li>
-        <NavLink
-          style={({ isActive }) => ({
-            color: isActive ? "#FF3811" : "#444444",
-            backgroundColor: 'white'
-          })}
-          to="/about"
+        <HashLink
+          smooth={true} // Add the smooth prop
+          className="text-[#444444]"
+          to="#about"
         >
           About
-        </NavLink>
+        </HashLink>
       </li>
       <li>
         <NavLink
           style={({ isActive }) => ({
             color: isActive ? "#FF3811" : "#444444",
-            backgroundColor: 'white'
+            backgroundColor: "white",
           })}
           to="/services"
         >
@@ -42,7 +41,7 @@ const Navbar = () => {
         <NavLink
           style={({ isActive }) => ({
             color: isActive ? "#FF3811" : "#444444",
-            backgroundColor: 'white'
+            backgroundColor: "white",
           })}
           to="/blog"
         >
@@ -53,7 +52,7 @@ const Navbar = () => {
         <NavLink
           style={({ isActive }) => ({
             color: isActive ? "#FF3811" : "#444444",
-            backgroundColor: 'white'
+            backgroundColor: "white",
           })}
           to="/contact"
         >
@@ -122,9 +121,7 @@ const Navbar = () => {
             src="https://i.ibb.co/qMLFJDZ/Untitled.png"
             alt=""
           />
-          <a className="btn btn-outline btn-primary">
-            Get started
-          </a>
+          <a className="btn btn-outline btn-primary">Get started</a>
         </>
       </div>
     </div>

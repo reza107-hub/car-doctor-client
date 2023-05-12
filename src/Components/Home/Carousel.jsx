@@ -7,11 +7,11 @@ https://i.ibb.co/N7H5vbC/1.jpg
 const Carousel = () => {
   return (
     <div className="carousel w-full ">
-      <div id="slide1" className="carousel-item relative h-[600px] w-full">
+      <div id="slide1" className="carousel-item relative h-[500px] lg:h-[600px] w-full">
         <img src="https://i.ibb.co/KXpTBGz/2.jpg" className="w-full " />
-        <div className="absolute rounded-xl flex items-center h-full bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-          <div className="text-white space-y-7 pl-12 w-1/2">
-            <h2 className="text-6xl font-bold">
+        <div className="absolute md:rounded-xl flex items-center h-full bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+          <div className="text-white space-y-7 pl-12 lg:w-1/2">
+            <h2 className="lg:text-6xl text-2xl font-bold">
               Affordable Price For Car Servicing
             </h2>
             <p>
@@ -35,11 +35,11 @@ const Carousel = () => {
           </a>
         </div>
       </div>
-      <div id="slide2" className="carousel-item relative h-[600px]  w-full">
+      <div id="slide2" className="carousel-item relative h-[500px] lg:h-[600px]  w-full">
         <img src="https://i.ibb.co/J2vQFS2/3.jpg" className="w-full" />
-        <div className="absolute rounded-xl flex items-center h-full bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-          <div className="text-white space-y-7 pl-12 w-1/2">
-            <h2 className="text-6xl font-bold">
+        <div className="absolute md:rounded-xl flex items-center h-full bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+          <div className="text-white space-y-7 pl-12 lg:w-1/2">
+            <h2 className="lg:text-6xl text-2xl font-bold">
               Affordable Price For Car Servicing
             </h2>
             <p>
@@ -63,11 +63,11 @@ const Carousel = () => {
           </a>
         </div>
       </div>
-      <div id="slide3" className="carousel-item relative h-[600px] w-full">
+      <div id="slide3" className="carousel-item relative h-[500px] lg:h-[600px] w-full">
         <img src="https://i.ibb.co/cx95bZw/4.jpg" className="w-full" />
-        <div className="absolute rounded-xl flex items-center h-full bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-          <div className="text-white space-y-7 pl-12 w-1/2">
-            <h2 className="text-6xl font-bold">
+        <div className="absolute md:rounded-xl flex items-center h-full bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+          <div className="text-white space-y-7 pl-12 lg:w-1/2">
+            <h2 className="lg:text-6xl text-2xl font-bold">
               Affordable Price For Car Servicing
             </h2>
             <p>
@@ -91,11 +91,11 @@ const Carousel = () => {
           </a>
         </div>
       </div>
-      <div id="slide4" className="carousel-item relative h-[600px] w-full">
+      <div id="slide4" className="carousel-item relative h-[500px] lg:h-[600px] w-full">
         <img src="https://i.ibb.co/N7H5vbC/1.jpg" className="w-full" />
-        <div className="absolute rounded-xl flex items-center h-full bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-          <div className="text-white space-y-7 pl-12 w-1/2">
-            <h2 className="text-6xl font-bold">
+        <div className="absolute md:rounded-xl flex items-center h-full bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+          <div className="text-white space-y-7 pl-12 lg:w-1/2">
+            <h2 className="lg:text-6xl text-2xl font-bold">
               Affordable Price For Car Servicing
             </h2>
             <p>
