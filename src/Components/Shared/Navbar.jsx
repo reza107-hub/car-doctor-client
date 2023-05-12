@@ -47,15 +47,13 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink
-          style={({ isActive }) => ({
-            color: isActive ? "#FF3811" : "#444444",
-            backgroundColor: "white",
-          })}
-          to="/contact"
+      <HashLink
+          smooth={true} // Add the smooth prop
+          className="text-[#444444]"
+          to="#contact"
         >
-          Contact
-        </NavLink>
+          Contacts
+        </HashLink>
       </li>
     </>
   );
