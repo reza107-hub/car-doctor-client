@@ -117,7 +117,7 @@ const Navbar = () => {
             src="https://i.ibb.co/qMLFJDZ/Untitled.png"
             alt=""
           />
-          <a className="btn btn-outline btn-primary">Get started</a>
+          <a className="btn btn-outline btn-primary normal-case">Appointment</a>
         </>
       </div>
     </div>
