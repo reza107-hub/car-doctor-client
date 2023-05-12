@@ -1,9 +1,4 @@
-/* 
-https://i.ibb.co/KXpTBGz/2.jpg
-https://i.ibb.co/J2vQFS2/3.jpg
-https://i.ibb.co/cx95bZw/4.jpg
-https://i.ibb.co/N7H5vbC/1.jpg
-*/
+
 const Carousel = () => {
   return (
     <div className="carousel w-full ">
