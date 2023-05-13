@@ -3,6 +3,10 @@ import App from "../../App";
 import Home from "../Home/Home";
 import Login from "../Authorization/Login";
 import Register from "../Authorization/Register";
+import ServiceDetails from "../ServiceDetails/ServiceDetails";
+import CheckOut from "../CheckOUT/CheckOut";
+import Inventory from "../Inventory'/Inventory";
+import PrivateRoute from "../../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +24,26 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/servicesDetails/:id",
+        element: <ServiceDetails></ServiceDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/services/${params.id}`),
+      },
+      {
+        path: "/checkOut/:id",
+        element: <CheckOut />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/services/${params.id}`),
+      },
+      {
+        path: "/inventory",
+        element: (
+          <PrivateRoute>
+            <Inventory />
+          </PrivateRoute>
+        ),
       },
     ],
   },

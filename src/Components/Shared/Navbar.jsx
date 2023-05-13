@@ -1,8 +1,14 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import { HashLink } from "react-router-hash-link";
+import { AuthContext } from "../AuthProbider/AuthProvider";
+import { useContext } from "react";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut();
+  };
   const option = (
     <>
       <li>
@@ -27,7 +33,7 @@ const Navbar = () => {
         </HashLink>
       </li>
       <li>
-      <HashLink
+        <HashLink
           smooth={true} // Add the smooth prop
           className="text-[#444444]"
           to="#services"
@@ -47,13 +53,23 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-      <HashLink
+        <HashLink
           smooth={true} // Add the smooth prop
           className="text-[#444444]"
           to="#contact"
         >
           Contacts
         </HashLink>
+      </li>
+      <li>
+        {user ? (
+          <button onClick={handleLogOut}>logout</button>
+        ) : (
+          <Link to="/login">login</Link>
+        )}
+      </li>
+      <li>
+        <Link to="/inventory">Inventory</Link>
       </li>
     </>
   );
