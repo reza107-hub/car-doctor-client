@@ -1,4 +1,4 @@
-const Table = ({ dt, handleDelete }) => {
+const Table = ({ dt, handleDelete, handleConfirm }) => {
   return (
     <div>
       <div className="overflow-x-auto w-full mt-6">
@@ -32,7 +32,16 @@ const Table = ({ dt, handleDelete }) => {
               <td>${dt.price}</td>
 
               <th>
-                <button className="btn btn-ghost btn-xs">details</button>
+                {dt.status ? (
+                  <p className="text-primary">Confirm</p>
+                ) : (
+                  <button
+                    onClick={() => handleConfirm(dt._id)}
+                    className="btn btn-outline btn-primary btn-xs"
+                  >
+                    Confirm
+                  </button>
+                )}
               </th>
             </tr>
           </tbody>
