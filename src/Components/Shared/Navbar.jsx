@@ -7,7 +7,9 @@ import { useContext } from "react";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const handleLogOut = () => {
-    logOut();
+    logOut()
+      .then(() => {})
+      .catch((err) => console.log(err));
   };
   const option = (
     <>

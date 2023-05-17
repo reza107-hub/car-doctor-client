@@ -11,7 +11,6 @@ import {
 } from "firebase/auth";
 import app from "../../firebase/firebase.init";
 
-
 export const AuthContext = createContext();
 
 const auth = getAuth(app);
@@ -44,9 +43,8 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, googleProvider);
   };
 
-
   const logOut = () => {
-    signOut(auth);
+    return signOut(auth);
   };
   const authInfo = {
     user,
@@ -60,9 +58,27 @@ const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    const unSubscribe = onAuthStateChanged(auth, (loggedUser) => {
-      setUser(loggedUser);
+    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
       setLoading(false);
+      if (currentUser && currentUser.email) {
+        const loggedUser = {
+          email: currentUser.email,
+        };
+        fetch("https://car-doctor-server-two-silk.vercel.app/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(loggedUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            localStorage.setItem("car-access-token", data.token);
+          });
+      } else {
+        localStorage.removeItem("car-access-token");
+      }
     });
     return () => {
       return unSubscribe();

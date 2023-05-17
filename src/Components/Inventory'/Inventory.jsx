@@ -2,22 +2,32 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProbider/AuthProvider";
 import Table from "./Table";
 import DynamicBanner from "../Shared/DynamicBanner";
+import { useNavigate } from "react-router-dom";
 
 const Inventory = () => {
   const { user } = useContext(AuthContext);
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
+  const url = `https://car-doctor-server-two-silk.vercel.app/booking?email=${user?.email}`;
   useEffect(() => {
-    fetch("http://localhost:5000/booking")
+    fetch(url, {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("car-access-token")}`,
+      },
+    })
       .then((res) => res.json())
       .then((d) => {
-        const loggedUserData = d.filter((list) => list.email == user.email);
-        setData(loggedUserData);
-        console.log(d);
+        if (!d.error) {
+          setData(d);
+        } else {
+          navigate("/");
+        }
       });
-  }, [user.email]);
+  }, [navigate, url]);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/booking/${id}`, {
+    fetch(`https://car-doctor-server-two-silk.vercel.app/booking/${id}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",
@@ -32,7 +42,7 @@ const Inventory = () => {
   };
 
   const handleConfirm = (id) => {
-    fetch(`http://localhost:5000/booking/${id}`, {
+    fetch(`https://car-doctor-server-two-silk.vercel.app/booking/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

@@ -29,13 +29,17 @@ export const router = createBrowserRouter([
         path: "/servicesDetails/:id",
         element: <ServiceDetails></ServiceDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(
+            `https://car-doctor-server-two-silk.vercel.app/services/${params.id}`
+          ),
       },
       {
         path: "/checkOut/:id",
         element: <CheckOut />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(
+            `https://car-doctor-server-two-silk.vercel.app/services/${params.id}`
+          ),
       },
       {
         path: "/inventory",

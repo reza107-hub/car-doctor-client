@@ -23,7 +23,7 @@ const OrderConfirm = ({ data }) => {
       img,
     };
 
-    fetch("http://localhost:5000/booking", {
+    fetch("https://car-doctor-server-two-silk.vercel.app/booking", {
       method: "POST",
       headers: {
         "content-type": "application/json",
